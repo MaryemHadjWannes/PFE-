@@ -1,0 +1,65 @@
+.Sidebar {
+  position: fixed;
+  top: 100px; /* Ajuster la valeur pour modifier l'espace entre la barre de navigation et la barre latérale */
+  left: 0;
+  width: 220px;
+  height: 100%;
+  z-index: 50;
+  background-color:#fff;
+}
+
+.SideBarPatient {
+  /*position: fixed;*/
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 220px;
+  background-color: #fff;
+  z-index: 1;
+  overflow-x: hidden;
+  padding-top: 20px;
+  
+}
+
+.toggle-icon {
+  position: fixed;
+  top: 50px;
+  left: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 2;
+  margin-top: 50px;
+}
+
+.liste-navbar {
+  list-style-type: none;
+  padding: 0;
+  margin-inline-start: 2px;
+  margin-top: 10px;
+}
+
+.liste-navbar li {
+  margin-top: 20px;
+}
+
+.liste-navbar a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #222;
+  font-size: 16px;
+}
+
+.liste-navbar a:hover {
+  color: #00cc00;
+}
+
+.liste-navbar .active {
+  color: #00cc00;
+  font-weight: bold;
+}
+
+.liste-navbar .icon {
+  margin-right: 15px;
+  color: #00cc00;
+}

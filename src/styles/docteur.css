@@ -1,0 +1,317 @@
+/* Styles généraux */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #444;
+}
+
+/* Barre de navigation */
+
+.navbar {
+  background-color: #007bff;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-right: 1rem;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Tableau de bord */
+
+.dashboard {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.dashboard-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-basis: calc(33.33% - 1rem);
+  margin-right: 1rem;
+  padding: 1rem;
+}
+
+.dashboard-card:last-child {
+  margin-right: 0;
+}
+
+.dashboard-card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-card p {
+  margin: 0;
+  margin-bottom: 0.25rem;
+}
+
+/* Calendrier de rendez-vous */
+
+.appointments-calendar {
+  margin: 2rem 0;
+}
+
+.appointments-calendar-header {
+  background-color: #007bff;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.appointments-calendar-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.appointments-calendar-header button {
+  background-color: #fff;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.appointments-calendar-header button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.appointments-calendar-weekdays {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.appointments-calendar-weekdays p {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.appointments-calendar-days {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.appointments-calendar-day {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-basis: calc(25% - 0.5rem);
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.appointments-calendar-day:last-child {
+  margin-right: 0;
+}
+
+.appointments-calendar-day:hover {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Liste des patients */
+
+.patients-list {
+  margin: 2rem 0;
+}
+
+.patients-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.patients-list-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.patients-list-search {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-basis: 30%;
+  padding: 0.5rem;
+}
+
+.patients-list-search input {
+  border: none;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.patients-list-search input:focus {
+  outline: none;
+}
+
+.patients-list-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  transition: all 0.2s ease;
+}
+
+.patients-list-item:last-child {
+  margin-bottom: 0;
+}
+
+.patients-list-item:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Détails du patient */
+
+.patient-details h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.patient-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.patient-info p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.patient-medical-record h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.patient-medical-record ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.patient-medical-record li {
+  margin-bottom: 0.5rem;
+}
+
+.patient-medical-record-form {
+  margin-top: 1rem;
+}
+
+.patient-medical-record-form label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.patient-medical-record-form input,
+.patient-medical-record-form textarea {
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.patient-medical-record-form input:focus,
+.patient-medical-record-form textarea:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.patient-prescription-form {
+  margin-top: 1rem;
+}
+
+.patient-prescription-form label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.patient-prescription-form input {
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.patient-prescription-form input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.patient-prescription-form button {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.patient-prescription-form button:hover {
+  background-color: #fff;
+  color: #007bff;
+}

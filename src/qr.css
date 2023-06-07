@@ -1,0 +1,37 @@
+.qr-verifier {
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.qr-scanner {
+  position: relative;
+  width: 100%;
+}
+
+.qr-scanner video {
+  width: 100%;
+  height: auto;
+}
+
+.qr-result {
+  margin-top: 20px;
+}
+
+.qr-data {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.verify-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #008CBA;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.verify-btn:hover {
+  background-color: #006B8F;
+}

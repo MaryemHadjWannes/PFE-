@@ -1,0 +1,36 @@
+#scanner-container {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 50px;
+  }
+  
+  #scanner {
+    width: 100%;
+    height: 300px;
+    background-color: #ccc;
+  }
+  
+  .quagga-box {
+    border: 2px solid #fff;
+    box-sizing: border-box;
+  }
+  
+  .quagga-line {
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    animation: quagga-line-animation 2s linear infinite;
+  }
+  
+  @keyframes quagga-line-animation {
+    0% {
+      transform: translateY(-50%);
+    }
+    100% {
+      transform: translateY(50%);
+    }
+  }
+  

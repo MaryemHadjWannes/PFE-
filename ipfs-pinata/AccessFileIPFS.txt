@@ -1,0 +1,12 @@
+--------------------------
+Access By this URL 
+--------------------------
+
+https://gateway.ipfs.io/ipfs/The_Hash 
+
+-------
+EXemple
+-------
+https://gateway.ipfs.io/ipfs/QmYbiFHPpofGiqPrMYKZv97F4QDK8UWd6vWh8LWYRF5B4z 
+
+// QmYbiFHPpofGiqPrMYKZv97F4QDK8UWd6vWh8LWYRF5B4z : The_Hash of passeport.json

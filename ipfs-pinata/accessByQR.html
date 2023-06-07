@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QR Code for IPFS Hash</title>
+  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+  <style>
+    #qrcode {
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="qrcode"></div>
+
+  <script>
+    // Replace 'YOUR_IPFS_GATEWAY_URL' with the actual IPFS gateway URL
+    const ipfsGatewayURL = 'https://gateway.ipfs.io/ipfs/';
+    // Replace 'YOUR_IPFS_HASH' with the actual IPFS hash
+    const ipfsHash = 'QmYbiFHPpofGiqPrMYKZv97F4QDK8UWd6vWh8LWYRF5B4z';
+
+    // Generate the QR code
+    const qrCode = new QRCode(document.getElementById('qrcode'), {
+      text: ipfsGatewayURL + ipfsHash, // Set the content of the QR code
+      width: 200,
+      height: 200,
+    });
+  </script>
+</body>
+</html>

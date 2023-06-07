@@ -1,0 +1,66 @@
+/**/
+.Connected.Address {
+  border-top: 2px solid black;
+  padding: 10px;
+}
+
+.create-identifier-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
+/**/
+.create-identifier-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+.create-identifier-popup label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.create-identifier-popup input[type="text"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.create-identifier-popup input[type="radio"] {
+  margin-right: 10px;
+}
+
+.create-identifier-popup button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.create-identifier-popup button.create {
+  background-color: #4caf50;
+  color: #fff;
+  
+}
+
+.create-identifier-popup button.cancel {
+  background-color: #f44336;
+  color: #fff;
+}

@@ -1,0 +1,78 @@
+.backgroundDoc {
+  
+    background-image: url('../images/image-font2.jpg'); /* Ajout de l'image de fond */
+    background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+
+  
+}
+
+  .doctorSignup form {
+    max-width: 500px;
+    height: 600px;
+    margin: 30px 0 auto;
+    padding: 5px;
+    overflow: hidden;
+    background-color: transparent; /* Fond légèrement transparent */
+    border-radius: 5px;
+    box-shadow: 0 0 10px transparent;
+    box-sizing: border-box;
+    margin-left: 450px;
+    margin-top: 5px;
+    display: flex; /* Ajout de la propriété flex */
+    flex-direction: column; /* Définir la direction de flexion en colonne */
+    align-items: center; /* Centrer les éléments horizontalement */
+  }
+
+  .doctorSignup h1{
+    font-size: 24px;
+    font-weight: bolder;
+    border-bottom: 1px solid #4caf50; /* Add this line to create a border line */
+    padding-bottom: 10px; /* Add some spacing between the line and the text */
+    color: #4caf50;
+  }
+  
+  .doctorSignup label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .doctorSignup input {
+    padding: 4px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: transparent;
+  }
+  
+  .doctorSignup button[type="submit"] {
+    padding: 5px;
+    margin-top: 5px;
+    background-color: #16c936;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 440px;
+  }
+  
+  .doctorSignup button[type="submit"]:hover {
+    background-color: #0066cc;
+  }
+  
+  .doctorSignup p {
+    margin-top: 5px;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .doctorSignup p a {
+    color: #4caf50;
+  }

@@ -1,0 +1,50 @@
+.medical-passport {
+    width: 600px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+  }
+  
+  .medical-passport h1 {
+    font-size: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px; 
+  }
+  
+  .medical-passport label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .medical-passport input, 
+  .medical-passport select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 3px; 
+  }
+  
+  .medical-passport .vaccinations {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  } 
+  
+  .medical-passport .vaccinations li {
+    display: inline-block;
+    background: #eee;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-right: 3px;
+  }
+  
+  .medical-passport .qr-code {
+    text-align: center;
+    margin-top: 20px;
+  } 

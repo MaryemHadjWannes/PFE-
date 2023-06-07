@@ -1,0 +1,77 @@
+.backgroundSign{
+  background-image: url("https://i.stack.imgur.com/wN3s7.png");
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.form-Signin {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffff;
+    box-shadow: 0px 0px 10px #4caf50;
+    border-radius: 10px;
+    position: relative; /* Ajout de cette ligne */
+    left: -220px;
+  }
+  
+  h2 {
+    margin-left:0 ;
+  
+    margin-bottom: 20px;
+  }
+
+  .signin-h2{
+    margin-bottom: 25px;
+    color: #88d351;
+  }
+  
+  label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+ 
+
+  .backgroundSign p {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .backgroundSign p a {
+    color: #4caf50;
+  }
+
+  .signinButton{
+    margin-top: 20px;
+  }

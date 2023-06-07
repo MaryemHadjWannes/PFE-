@@ -1,0 +1,31 @@
+.confirmation-container {
+  width: 500px; /* Set the desired width of the container */
+  height: 300px; /* Set the desired height of the container */
+  border: 1px solid #ccc; /* Add a border to the container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: 30px;
+  margin-top: 30px;
+  background-color: white;
+  box-shadow: 0px 0px 10px #4caf50;
+  border-radius: 10px;
+}
+
+.confirmation-demande-title {
+  font-size: 24px;
+  margin-bottom: 35px;
+  font-weight: bold;
+}
+
+.confirmation-demane-p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.link-to-home a {
+  color: #88d351;
+  text-decoration: underline;
+}

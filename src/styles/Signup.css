@@ -1,0 +1,129 @@
+.backgroundSignup {
+  background-image: url("https://i.stack.imgur.com/wN3s7.png");
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-container {
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 0 auto; /* centrer horizontalement */
+  max-width: 400px;
+  position: relative; /* Ajout de cette ligne */
+}
+
+.form-Signup
+{
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 0 auto; /* centrer horizontalement */
+  max-width: 400px;
+  position: relative; /* Ajout de cette ligne */
+  box-shadow: 0px 0px 10px #4caf50;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  top: -50px;
+  left: -15px;
+  
+}
+
+
+
+
+
+.form-Signin {
+  width: 500px;
+  margin-left: 430px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px #4caf50;
+  border-radius: 10px;
+}
+
+.signup-title{
+  margin-bottom: 25px;
+  color: #4caf50;
+}
+
+.signup-container{
+  margin-top: 150px;
+  
+}
+  
+  /* Select input */
+  .role-selection select {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    margin-right: 1rem;
+    width: 200px;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 10 px;
+  }
+  
+  /* Hover effect for select input */
+  .role-selection select:hover {
+    border-color: #555;
+  }
+  
+  /* Active/focus effect for select input */
+  .role-selection select:focus {
+    outline: none;
+    border-color: #333;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+  
+  /* Submit button */
+  .role-selection button {
+    background-color: #88d351;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+  }
+  
+  /* Hover effect for submit button */
+  .role-selection button:hover {
+    background-color: #88d351;
+  }
+  
+  /* Active/focus effect for submit button */
+  .role-selection button:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+  
+  /* Animation for role selection */
+  .role-selection select:focus + button {
+    transform: translateX(10px);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .buttonSignUp{
+    margin-top: 30px;
+    color: #88d351;
+  }
+
+  .form-Signup p a {
+    color: #4caf50;
+  }
+  
+  .form-Signup h2{
+    color: #88d351;
+  }

@@ -1,0 +1,150 @@
+    // Register the 'web3' Key Management System
+    
+    // https://identity.foundation/didcomm-messaging/spec/#a1-sender-secrets
+    const senderSecretEd25519X = 'G-boxFB6vOZBu-wXkm-9Lh79I8nf9Z50cILaOgKKGww'
+    const senderSecretEd25519D = 'pFRUKkyzx4kHdJtFSnlPA9WzqkDT1HWV0xZ5OYZd2SY'
+
+    const senderSecretX25519X = 'avH0O2Y4tqLAq8y9zpianr8ajii5m4F_mICrzNlatXs'
+    const senderSecretX25519D = 'r-jK2cO3taR8LQnJB1_ikLBTAnOtShJOsHXRUWT-aZA'
+
+    function bytesToHex(bytes) {
+      return bytes.reduce((str, byte) => str + byte.toString(16).padStart(2, '0'), '');
+    }
+
+    function base64ToBytes(base64) {
+      const binaryString = atob(base64);
+      const bytes = new Uint8Array(binaryString.length);
+      for (let i = 0; i < binaryString.length; i++) {
+        bytes[i] = binaryString.charCodeAt(i);
+      }
+      return bytes;
+    }
+    
+
+    const sender = await agent.didManagerImport({
+      did: 'did:example:alice',
+      keys: [
+        {
+          type: 'Ed25519',
+          kid: 'did:example:alice#key-1',
+          publicKeyHex: bytesToHex(base64ToBytes(senderSecretEd25519X)),
+          // we use stablelib/nacl for ed25519, and the preferred encoding for the privateKey there is a 64 byte
+          // string, where the second half is the precomputed 32 byte encoding of the publicKey. This seems to be the
+          // preferred encoding in other related libraries too, as the pre-computation speeds up the signing by a few
+          // milliseconds.
+          // https://github.com/StableLib/stablelib/blob/a89a438fcbf855de6b2e9faa2630f03c3f3b3a54/packages/ed25519/ed25519.ts#L669
+          // https://crypto.stackexchange.com/a/54367
+          // https://github.com/libp2p/specs/blob/master/peer-ids/peer-ids.md#ed25519
+          privateKeyHex:
+            bytesToHex(u8aToHex.concat([base64ToBytes(senderSecretEd25519D), base64ToBytes(senderSecretEd25519X)])),
+          kms: 'local',
+        },
+        {
+          type: 'X25519',
+          kid: 'did:example:alice#key-x25519-1',
+          publicKeyHex: bytesToHex(base64ToBytes(senderSecretX25519X)),
+          privateKeyHex:
+            bytesToHex(base64ToBytes(senderSecretX25519D)),
+          kms: 'local',
+        },
+      ],
+      provider: 'did:example',
+      alias: 'alice',
+    })
+
+    
+
+
+---------------------------------
+
+    const account = `0x19f37ba99748dddf1047239348309e1557569adb`;
+    const did = `did:ethr:0x5:${account}`;
+    const controllerKeyId = `metamask-${account}`;
+    await agent.didManagerImport({
+      did,
+      provider: 'did:ethr:goerli',
+      controllerKeyId,
+      didDocumentMetadata: {
+        versionId: '9004947',
+        updated: '2023-05-15T15:27:48Z',
+      },
+      didResolutionMetadata: {
+        contentType: 'application/did+ld+json',
+      },
+      didDocument: {
+        '@context': [
+          'https://www.w3.org/ns/did/v1',
+          'https://w3id.org/security/suites/secp256k1recovery-2020/v2',
+        ],
+        id: 'did:ethr:goerli:0x19f37ba99748dddf1047239348309e1557569adb',
+        verificationMethod: [
+          {
+            id: 'did:ethr:goerli:0x19f37ba99748dddf1047239348309e1557569adb#controller',
+            type: 'EcdsaSecp256k1RecoveryMethod2020',
+            controller: 'did:ethr:goerli:0x19f37ba99748dddf1047239348309e1557569adb',
+            blockchainAccountId: 'eip155:5:0x19F37bA99748DdDf1047239348309e1557569adB',
+          },
+        ],
+        authentication: [
+          'did:ethr:goerli:0x19f37ba99748dddf1047239348309e1557569adb#controller',
+        ],
+        assertionMethod: [
+          'did:ethr:goerli:0x19f37ba99748dddf1047239348309e1557569adb#controller',
+        ],
+      },
+      keys: [
+        {
+          kid: controllerKeyId,
+          type: 'Secp256k1',
+          kms: 'web3',
+          privateKeyHex: '0x143fd2008d3b27482ffb1a9eb63725da5a9bce2f0142fc6368ee8f12fab35652', // Add your private key here
+          publicKeyHex: '0x19F37bA99748DdDf1047239348309e1557569adB', // Add your public key here
+          meta: {
+            account,
+            provider: 'metamask',
+            algorithms: ['eth_signMessage', 'eth_signTypedData'],
+          },
+        },
+      ],
+    });
+    
+
+
+      const identifier = await agent.didManagerGet({ did })
+
+
+
+      ---------------------------------------------------
+
+           // Replace the private key with your Ganache account's private key
+  const privateKey = '0x143fd2008d3b27482ffb1a9eb63725da5a9bce2f0142fc6368ee8f12fab35652';
+
+  const wallet = new Wallet(privateKey);
+  const address1 = wallet.address;
+  const publicKeyHex = wallet.publicKey.substring(2);
+  const compressedPublicKey = computePublicKey(`0x${publicKeyHex}`, true);
+  const identifier = `did:ethr:ganache:${compressedPublicKey}`;
+
+  console.log('Address:', address1);
+  console.log('Public Key Hex:', publicKeyHex);
+  console.log(`Send ETH to ${address1} on Ganache to be able to update ${identifier}`);
+
+  
+    const identity = await agent.didManagerImport({
+      did: identifier,
+      provider: 'did:ethr:ganache',
+      controllerKeyId: publicKeyHex,
+      keys: [
+        {
+          kid: publicKeyHex,
+          kms: 'local',
+          type: 'Secp256k1',
+          publicKeyHex: publicKeyHex,
+          privateKeyHex: privateKey,
+        },
+      ],
+      services: [],
+    });
+
+    console.log('New identity created:');
+    console.log(identity);

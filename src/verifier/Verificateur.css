@@ -1,0 +1,20 @@
+
+.verificateur-container {
+    text-align: center;
+  }
+  
+  
+  .cin-input {
+    margin: 10px auto;
+    width: 200px;
+    padding: 5px;
+  }
+  
+  .verification-button {
+    margin: 10px 5px;
+  }
+  
+  .verification-status {
+    margin-top: 10px;
+  }
+  

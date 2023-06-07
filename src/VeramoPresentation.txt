@@ -1,0 +1,35 @@
+{
+  tag: 'xyz123',
+  verifiableCredential: [
+    {
+      credentialSubject: {
+        name: 'Alice',
+        id: 'did:ethr:0xeC06d0247E409CB8d445E0FC8Da57513Cde528De'
+      },
+      issuer: { id: 'did:ethr:0x19f37ba99748dddf1047239348309e1557569adb' },
+      type: [ 'VerifiableCredential', 'Profile' ],
+      credentialStatus: {
+        type: 'EthrStatusRegistry2019',
+        id: 'goerli:0x97fd27892cdcD035dAe1fe71235c636044B59348'
+      },
+      '@context': [
+        'https://www.w3.org/2018/credentials/v1',
+        'https://veramo.io/contexts/profile/v1'
+      ],
+      issuanceDate: '2023-05-30T17:51:00.000Z',
+      proof: {
+        type: 'JwtProof2020',
+        jwt: 'eyJhbGciOiJFUzI1NksiLCJ0eXAiOiJKV1QifQ.eyJ2YyI6eyJAY29udGV4dCI6WyJodHRwczovL3d3dy53My5vcmcvMjAxOC9jcmVkZW50aWFscy92MSIsImh0dHBzOi8vdmVyYW1vLmlvL2NvbnRleHRzL3Byb2ZpbGUvdjEiXSwidHlwZSI6WyJWZXJpZmlhYmxlQ3JlZGVudGlhbCIsIlByb2ZpbGUiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsibmFtZSI6IkFsaWNlIn0sImNyZWRlbnRpYWxTdGF0dXMiOnsidHlwZSI6IkV0aHJTdGF0dXNSZWdpc3RyeTIwMTkiLCJpZCI6ImdvZXJsaToweDk3ZmQyNzg5MmNkY0QwMzVkQWUxZmU3MTIzNWM2MzYwNDRCNTkzNDgifX0sInN1YiI6ImRpZDpldGhyOjB4ZUMwNmQwMjQ3RTQwOUNCOGQ0NDVFMEZDOERhNTc1MTNDZGU1MjhEZSIsIm5iZiI6MTY4NTQ2OTA2MCwiaXNzIjoiZGlkOmV0aHI6MHgxOWYzN2JhOTk3NDhkZGRmMTA0NzIzOTM0ODMwOWUxNTU3NTY5YWRiIn0._lUN_h2hFMX66R_JkaLQYwZfYgKsqvb_FHBzu2HyuIO60Lg5wT2vhm4U_2ZTiU3qTrWLHg6v8ZuOokUaeMKOFg'
+      }
+    }
+  ],
+  holder: 'did:ethr:0xeC06d0247E409CB8d445E0FC8Da57513Cde528De',
+  verifier: [ 'did:ethr:0x19f37ba99748dddf1047239348309e1557569adb' ],
+  type: [ 'VerifiablePresentation', 'Profile' ],
+  '@context': [ 'https://www.w3.org/2018/credentials/v1' ],
+  issuanceDate: '2023-05-30T17:52:30.000Z',
+  proof: {
+    type: 'JwtProof2020',
+    jwt: 'eyJhbGciOiJFUzI1NksiLCJ0eXAiOiJKV1QifQ.eyJ2cCI6eyJAY29udGV4dCI6WyJodHRwczovL3d3dy53My5vcmcvMjAxOC9jcmVkZW50aWFscy92MSJdLCJ0eXBlIjpbIlZlcmlmaWFibGVQcmVzZW50YXRpb24iLCJQcm9maWxlIl0sInZlcmlmaWFibGVDcmVkZW50aWFsIjpbImV5SmhiR2NpT2lKRlV6STFOa3NpTENKMGVYQWlPaUpLVjFRaWZRLmV5SjJZeUk2ZXlKQVkyOXVkR1Y0ZENJNld5Sm9kSFJ3Y3pvdkwzZDNkeTUzTXk1dmNtY3ZNakF4T0M5amNtVmtaVzUwYVdGc2N5OTJNU0lzSW1oMGRIQnpPaTh2ZG1WeVlXMXZMbWx2TDJOdmJuUmxlSFJ6TDNCeWIyWnBiR1V2ZGpFaVhTd2lkSGx3WlNJNld5SldaWEpwWm1saFlteGxRM0psWkdWdWRHbGhiQ0lzSWxCeWIyWnBiR1VpWFN3aVkzSmxaR1Z1ZEdsaGJGTjFZbXBsWTNRaU9uc2libUZ0WlNJNklrRnNhV05sSW4wc0ltTnlaV1JsYm5ScFlXeFRkR0YwZFhNaU9uc2lkSGx3WlNJNklrVjBhSEpUZEdGMGRYTlNaV2RwYzNSeWVUSXdNVGtpTENKcFpDSTZJbWR2WlhKc2FUb3dlRGszWm1ReU56ZzVNbU5rWTBRd016VmtRV1V4Wm1VM01USXpOV00yTXpZd05EUkNOVGt6TkRnaWZYMHNJbk4xWWlJNkltUnBaRHBsZEdoeU9qQjRaVU13Tm1Rd01qUTNSVFF3T1VOQ09HUTBORFZGTUVaRE9FUmhOVGMxTVRORFpHVTFNamhFWlNJc0ltNWlaaUk2TVRZNE5UUTJPVEEyTUN3aWFYTnpJam9pWkdsa09tVjBhSEk2TUhneE9XWXpOMkpoT1RrM05EaGtaR1JtTVRBME56SXpPVE0wT0RNd09XVXhOVFUzTlRZNVlXUmlJbjAuX2xVTl9oMmhGTVg2NlJfSmthTFFZd1pmWWdLc3F2Yl9GSEJ6dTJIeXVJTzYwTGc1d1QydmhtNFVfMlpUaVUzcVRyV0xIZzZ2OFp1T29rVWFlTUtPRmciXX0sInRhZyI6Inh5ejEyMyIsIm5iZiI6MTY4NTQ2OTE1MCwiaXNzIjoiZGlkOmV0aHI6MHhlQzA2ZDAyNDdFNDA5Q0I4ZDQ0NUUwRkM4RGE1NzUxM0NkZTUyOERlIiwiYXVkIjpbImRpZDpldGhyOjB4MTlmMzdiYTk5NzQ4ZGRkZjEwNDcyMzkzNDgzMDllMTU1NzU2OWFkYiJdfQ._EB_Fo-HDhqW3RZ3Lv-9slAVgiLywHHC1_Jtn4ulkySURwGGFAyD-_-ScYtt2F9pHsEjC533USOYtnXjRnn7VQ'
+  }
+}

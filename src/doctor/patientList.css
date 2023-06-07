@@ -1,0 +1,157 @@
+.container-passeport {
+    margin-top: 150px;
+    max-height: max-content;
+    background-color: #ffffff;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .searchCIN {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .searchCIN .section-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .searchCIN .form-label {
+    text-align: left;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .searchCIN .form-control {
+    text-align: left;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .searchCIN .btn-primary {
+    margin-top: 10px;
+  }
+  
+  .RemplirPasseport {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .RemplirPasseport .section-title {
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .RemplirPasseport .form-label {
+    text-align: left;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .RemplirPasseport .form-control {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .RemplirPasseport .btn-primary {
+    margin-top: 10px;
+    align-self: flex-start;
+  }
+
+
+  .Informations-de-la-credential {
+    background-color: #ffffff;
+
+    padding: 10px;
+    border: 1px solid #24df2d;
+    border-radius: 4px;
+    width: 70%;
+    margin: 0 auto;
+  }
+  
+  .Informations-de-la-credential .section-title {
+    color: #18c721;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .Informations-de-la-credential pre {
+    white-space: pre-wrap;
+  }
+
+  
+  .box {
+    width: 70%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  
+  
+  .credential.green {
+    background-color: green;
+    color: white;
+  }
+  
+
+  /**/
+  .patient-credentials {
+    margin-top: 20px;
+  }
+  
+  .patient-credentials .table {
+    width: 100%;
+  }
+  
+  .patient-credentials .table th,
+  .patient-credentials .table td {
+    padding: 8px;
+  }
+  
+  .patient-credentials .credential.green {
+    background-color: green;
+    color: white;
+  }
+  
+  .patient-credentials .fetched-data {
+    margin-top: 10px;
+    
+  }
+  
+  .patient-credentials .fetched-data p {
+    margin: 0;
+    margin-bottom: 5px;
+    
+  }
+  
+  .patient-credentials .credential-divider {
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+  
+
+  /*fetched data*/
+  .fetched-data table {
+    width: 100%;
+  }
+  
+  .fetched-data table td {
+    padding: 8px;
+  }
+  
