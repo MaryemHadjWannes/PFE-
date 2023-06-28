@@ -29,6 +29,7 @@ const PatientList = () => {
       const account = accounts[0];
       const cinDoc = await contract.methods.getDoctorCinFromAccount(account).call();
       setCinDoctor(cinDoc);
+      
     };
 
     fetchData();
@@ -139,9 +140,9 @@ const PatientList = () => {
                     </td>
                     <td>
                       {credential.issuerCIN === cinDoctor ? (
-                        <p>Message for Doctor</p>
+                        <p>Issued By you</p>
                       ) : (
-                        <p>No message</p>
+                        <p>Issued By Another Doctor</p>
                       )}
                     </td>
                   </tr>

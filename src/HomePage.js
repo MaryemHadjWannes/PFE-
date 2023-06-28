@@ -15,6 +15,10 @@ import pat3 from './images/patient3.jpg';
 
 import us from   './images/us.jpg';
 
+import chat from './images/chatbot.png';
+
+import logoImage from './images/logo1.jpg';
+
 
 
 
@@ -68,7 +72,9 @@ function Navbar() {
 
   return (
     <nav>
-      <div className="logo">HomePage</div>
+      <div className="logo" >
+        <img src={logoImage}  alt="Logo"/>
+      </div>
       <div className="search">
         <input type="text" placeholder="Search..." />
         <button>Search</button>
@@ -466,7 +472,7 @@ function ChatBot() {
       <div className="chatbot-header" onClick={toggleChatbot}>
         <img
           className="chatbot-icon"
-          src="https://via.placeholder.com/50x50.png?text=Robot"
+          src={chat}
           alt="Chatbot Icon"
         />
       </div>

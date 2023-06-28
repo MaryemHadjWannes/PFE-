@@ -35,7 +35,6 @@ function ComposantePasseport() {
       const cinPa = await contract.methods.getPatientCinFromAccount(account).call();
       setCinPatient(cinPa);
     };
-
     fetchData();
   }, []);
 
@@ -52,8 +51,6 @@ function ComposantePasseport() {
       })
     );
     setPatientCredentials(credentialsWithFetchedData);
-    
-    
   };
 
   const fetchPatientDataFromIPFS = async (ipfsHash) => {
@@ -113,7 +110,7 @@ function ComposantePasseport() {
 
           <div className="patient-credentials">
             <h3 className="section-title">Patient Credentials:</h3>
-            {patientCredentials.map((credential, index) => (
+            {patientCredentials.slice().reverse().map((credential, index) => (
               <div
                 key={index}
                 className={`credential ${credential.issuerCIN === cinDoctor ? 'green' : ''}`}

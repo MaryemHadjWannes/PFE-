@@ -41,6 +41,8 @@ import AdminPatientWait from './admin/adminpatientWait';
 import AdminPatientApproved from './admin/adminpatientApproved';
 import DemoApp from './demo';
 import BlockchainInterface from './Trace';
+import PatientVerification from './verifier/Verification';
+import MyComponentV from './verifier/Verification';
 
 
 
@@ -114,7 +116,10 @@ function App() {
         <Route path='BlockchainInterface' element={<BlockchainInterface/>}/>
 
 
-         
+
+        <Route path="PatientVerification" element={<PatientVerification/>}/>
+
+         <Route path="MyComponentV" element={<MyComponentV/>}/>
       
       </Routes>
     </div>

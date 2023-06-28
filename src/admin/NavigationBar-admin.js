@@ -41,9 +41,13 @@ function NavigationBar() {
     window.location.href = '/AdminDidDocument';
   }
 
+  const handleExit = () => {
+    window.location.href = '/';
+  };
+
   return (
     <nav className="navAdmin">
-      <div className="logo">Admin</div>
+      <div className="logoAdmin">Admin</div>
       <div className="buttons">
       <div className={`dropdown ${isDoctorsDropdownOpen ? 'show' : ''}`}>
         <button
@@ -93,7 +97,7 @@ function NavigationBar() {
       </div>
         <button onClick={handleClickResolveDID}>DIDs</button>
         <button >Transactions</button>
-        <button >Contact Us</button>
+        <button onClick={handleExit} >Exit</button>
       </div>
     </nav>
   );

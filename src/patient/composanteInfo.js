@@ -1,11 +1,26 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
+import Web3 from 'web3';
 import './composanteInfo.css';
-import { left } from '@popperjs/core';
+import contractRegistration from '../contract/contractRegistration.json';
+
+
+// Contract parameters
+const ContractAddress = contractRegistration.address;
+const ContractABI = contractRegistration.abi;
+
+// Instance web3
+const web3Instance = new Web3(Web3.givenProvider);
+
+
 
 function MonFormulaire()  {
-
+  const [web3, setWeb3] = useState(null);
+  const [contract, setContract] = useState(null);
+  const [patients, setPatients] = useState([]);
+  const [connectedPatient, setConnectedPatient] = useState('');
+  const [email,setEmail] = useState('');
   
+//
 
   const [nom, setNom] = useState('');
   const [prenom, setPrenom] = useState('');
@@ -13,6 +28,10 @@ function MonFormulaire()  {
   const [numCin, setNumCin] = useState('');
   const [resultatVaccination, setResultatVaccination] = useState('');
   const [photo, setPhoto] = useState(null);
+//
+
+  const [oldPassword, setOldPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
 
   const handleNomChange = (event) => {
     setNom(event.target.value);
@@ -47,6 +66,88 @@ function MonFormulaire()  {
     // Envoyer la carte remplie au patient ici
   };
 
+  /** */
+
+  useEffect(() => {
+    const initializeWeb3 = async () => {
+      if (window.ethereum) {
+        try {
+          await window.ethereum.request({ method: "eth_requestAccounts" });
+          const web3Instance = new Web3(window.ethereum);
+          setWeb3(web3Instance);
+          const contractInstance = new web3Instance.eth.Contract(
+            ContractABI,
+            ContractAddress
+          );
+          setContract(contractInstance);
+          getAllPatients(contractInstance);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    };
+
+    initializeWeb3();
+  }, []);
+
+
+  const getAllPatients = async (contract) => {
+    if (!contract) return;
+
+    try {
+      const result = await contract.methods.getAllPatients().call();
+      console.log("Patients:", result);
+      setPatients(result);
+
+      if (web3Instance) {
+        const accounts = await web3Instance.eth.getAccounts();
+        if (accounts.length > 0) {
+          const connectedAccount = accounts[0];
+          console.log("Connected Account:", connectedAccount);
+          const connectedPatient = result.find(
+            (patient) =>
+              patient.account.toLowerCase() === connectedAccount.toLowerCase()
+          );
+          console.log("Connected Patient:", connectedPatient);
+          setConnectedPatient(connectedPatient);
+        }
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  ///////////////////
+  const handleOldPasswordChange = (e) => {
+    setOldPassword(e.target.value);
+  };
+
+  const handleNewPasswordChange = (e) => {
+    setNewPassword(e.target.value);
+  };
+
+  const handleUpdatePassword = async () => {
+    // Vérification de l'ancien mot de passe
+    console.log(web3.utils.sha3(oldPassword),connectedPatient[4],connectedPatient[3])
+    if (web3.utils.sha3(oldPassword).toLowerCase() !== connectedPatient[4].toLowerCase()) {
+      alert('Ancien mot de passe incorrect');
+      return;
+    }
+    const contractInstance = new web3Instance.eth.Contract(
+      ContractABI,
+      ContractAddress
+    );
+    const accounts = await web3Instance.eth.getAccounts();
+    const connectedAccount = accounts[0];
+
+    // Appel à la fonction modifyPatientPassword du smart contract
+    await contractInstance.methods.modifyPatientPassword(connectedPatient[3], web3.utils.sha3(newPassword)).send({from : connectedAccount, gas: 5000000});
+    alert('Mot de passe mis à jour avec succès');
+  };
+
+
+  ////
+ 
   return (
     <div className="main-content">
           <div className="containerProfile">         
@@ -63,24 +164,10 @@ function MonFormulaire()  {
                       alt="Maxwell Admin"
                     />
                   </div>
-                  <h5 className="user-name">Asma Wannes</h5>
-                  <h6 className="user-email">
-                    <a
-                      href="/cdn-cgi/l/email-protection"
-                      className="__cf_email__"
-                      data-cfemail="9de4e8f6f4ddd0fce5eaf8f1f1b3fef2f0"
-                    >
-                      [email&#160;protected]
-                    </a>
-                  </h6>
+                  <h5 className="user-name">{connectedPatient.firstName} {connectedPatient.lastName}</h5>
+                  <h6 className="user-email">{connectedPatient.email}</h6>
                 </div>
-                <div className="about">
-                  <h5>About</h5>
-                  <p>
-                    I'm Asma.
-                  </p>
                 </div>
-              </div>
             </div>
           </div>
         </div>
@@ -94,45 +181,80 @@ function MonFormulaire()  {
                 </div>
                 <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                   <div className="form-group">
-                    <label htmlFor="fullName">Full Name</label>
+                  <label htmlFor="fullName">Full Name</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="fullName"
+                    placeholder="Enter full name"
+                    value={`${connectedPatient.firstName} ${connectedPatient.lastName}`}
+                    readOnly
+                  />
+                  </div>
+                </div>
+                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div className="form-group">
+                    <label htmlFor="email">Email</label>
+                    <input
+                    type="text"
+                    className="form-control"
+                    id="email"
+                    placeholder="Enter Email"
+                    value={`${connectedPatient.email}`}
+                    readOnly
+                  />
+                  </div>
+                </div>
+                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div className="form-group">
+                    <label htmlFor="cin">CIN</label>
                     <input
                       type="text"
                       className="form-control"
-                      id="fullName"
-                      placeholder="Enter full name"
+                      id="cin"
+                      placeholder="Enter cin number"
+                      value={`${connectedPatient.cin}`}
+                    readOnly
                     />
                   </div>
                 </div>
                 <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                   <div className="form-group">
-                    <label htmlFor="eMail">Email</label>
-                    <input
-                      type="email"
-                      className="form-control"
-                      id="eMail"
-                      placeholder="Enter email ID"
-                    />
-                  </div>
-                </div>
-                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                  <div className="form-group">
-                    <label htmlFor="phone">Phone</label>
+                    <label htmlFor="code">Birth Date </label>
                     <input
                       type="text"
                       className="form-control"
-                      id="phone"
-                      placeholder="Enter phone number"
+                      id="cin"
+                      placeholder="code"
+                      value={`${connectedPatient.birth}`}
+                    readOnly
                     />
+                  </div>
+                </div>
+                <br></br>
+                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div className="form-group">
+                  <label htmlFor="ethaccount">Ethereum Account</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="ethaccount"
+                    placeholder="Enter full name"
+                    value={`${connectedPatient.account}`}
+                    readOnly
+                  />
                   </div>
                 </div>
                 <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                   <div className="form-group">
-                    <label htmlFor="website">Website URL</label>
+                    <label htmlFor="did">DID</label>
                     <input
-                      type="url"
+                      type="text"
                       className="form-control"
-                      id="website"
-                      placeholder="Website url"
+                      id="did"
+                      placeholder="Enter your DID"
+                      value={`${connectedPatient.did}`}
+                    readOnly
                     />
                   </div>
                 </div>
@@ -140,66 +262,46 @@ function MonFormulaire()  {
               <br></br>
               <div className="row gutters">
                 <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <h6 className="mt-3 mb-2 text-success personal-details">Address</h6>
+                <h6 className="mt-3 mb-2 text-success personal-details">Update Password</h6>
                 </div>
                 <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                 <div className="form-group">
-                <label htmlFor="Street">Street</label>
+                <label htmlFor="Street">Old Password</label>
                 <input
-                                  type="name"
+                                  type="password"
                                   className="form-control"
-                                  id="Street"
-                                  placeholder="Enter Street"
+                                  id="oldPassword"
+                                  placeholder="Enter old password"
+                                  value={oldPassword}
+                                  onChange={handleOldPasswordChange}
+                                  required
                                 />
                 </div>
                 </div>
                 <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                 <div className="form-group">
-                <label htmlFor="ciTy">City</label>
+                <label htmlFor="ciTy">New Password</label>
                 <input
-                                  type="name"
+                                  type="password"
                                   className="form-control"
-                                  id="ciTy"
-                                  placeholder="Enter City"
+                                  id="newPassword"
+                                  placeholder="Enter new password"
+                                  value={newPassword}
+                                  onChange={handleNewPasswordChange}
+                                  required
                                 />
                 </div>
                 </div>
-                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                <div className="form-group">
-                <label htmlFor="sTate">State</label>
-                <input
-                                  type="name"
-                                  className="form-control"
-                                  id="sTate"
-                                  placeholder="Enter State"
-                                />
-                </div>
-                </div>
-                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                <div className="form-group">
-                <label htmlFor="zIp">ZIP</label>
-                <input
-                                  type="text"
-                                  className="form-control"
-                                  id="zIp"
-                                  placeholder="Enter ZIP Code"
-                                />
-                </div>
-                </div>
-                
-      
-                <br></br>
-                <br></br>
-              </div>
-                <div className="row gutters">
-                <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                  </div>           
+                <div className="row gutters ">
+                <div className="col-xl-12  col-lg-12 col-md-12 col-sm-12 col-12">
                 <div className="text-right">
-                  <div className='buttonProfile'>
+                  <div className='buttonProfile' >
                 <button
                                   type="button"
                                   id="submit"
                                   name="submit"
-                                  className="btn right-btn btn-outline-danger"
+                                  className="btn btn-outline-danger"
                                 >
                 Cancel
                 </button>
@@ -207,7 +309,8 @@ function MonFormulaire()  {
                                   type="button"
                                   id="submit"
                                   name="submit"
-                                  className="btn left-btn btn-outline-success" 
+                                  className="btn btn-outline-success" 
+                                  onClick={handleUpdatePassword}
                                 >
                 Update
                 </button>

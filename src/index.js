@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 
 // Render your React app and pass the Ceramic and IDX instances as props if needed

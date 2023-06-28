@@ -129,12 +129,7 @@ function MonFormulaire()  {
                   <h5 className="user-name">{connectedDoctor.firstName} {connectedDoctor.lastName}</h5>
                   <h6 className="user-email">{connectedDoctor.email}</h6>
                 </div>
-                <div className="about">
-                  <h5>About</h5>
-                  <p>
-                    I'm Asma.
-                  </p>
-                </div>
+                
               </div>
             </div>
           </div>
@@ -234,22 +229,22 @@ function MonFormulaire()  {
               <br></br>
               <div className="row gutters">
                 <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <h6 className="mt-3 mb-2 text-success personal-details">Address</h6>
+                <h6 className="mt-3 mb-2 text-success personal-details">Update Password</h6>
                 </div>
                 <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                 <div className="form-group">
-                <label htmlFor="Street">Street</label>
+                <label htmlFor="Street">Old Password</label>
                 <input
                                   type="name"
                                   className="form-control"
                                   id="Street"
-                                  placeholder="Enter Street"
+                                  placeholder="Old password"
                                 />
                 </div>
                 </div>
                 <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                 <div className="form-group">
-                <label htmlFor="ciTy">City</label>
+                <label htmlFor="ciTy">New Password</label>
                 <input
                                   type="name"
                                   className="form-control"
@@ -258,31 +253,9 @@ function MonFormulaire()  {
                                 />
                 </div>
                 </div>
-                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                <div className="form-group">
-                <label htmlFor="sTate">State</label>
-                <input
-                                  type="name"
-                                  className="form-control"
-                                  id="sTate"
-                                  placeholder="Enter State"
-                                />
-                </div>
-                </div>
-                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                <div className="form-group">
-                <label htmlFor="zIp">ZIP</label>
-                <input
-                                  type="text"
-                                  className="form-control"
-                                  id="zIp"
-                                  placeholder="Enter ZIP Code"
-                                />
-                </div>
-                </div>
-                </div>
                 
-                             
+              
+                  </div>           
                 
                 <div className="row gutters ">
                 <div className="col-xl-12  col-lg-12 col-md-12 col-sm-12 col-12">

@@ -68,4 +68,7 @@ module.exports = {
     }),
   ],
   stats: "minimal",
+  experiments: {
+    topLevelAwait: true,
+  },
 };

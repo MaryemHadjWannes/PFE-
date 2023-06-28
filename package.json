@@ -8,6 +8,7 @@
     "@ceramicnetwork/http-client": "^2.22.0",
     "@ceramicstudio/idx": "^0.12.2",
     "@craco/craco": "^7.1.0",
+    "@fortawesome/fontawesome-free": "^6.4.0",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",

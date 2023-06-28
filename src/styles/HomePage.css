@@ -14,9 +14,16 @@ nav {
 
 
 nav .logo {
-  font-size: 24px;
-  font-weight: 600;
-  padding: 5px;
+  display: flex;
+  align-items: center;
+  padding: -5px;
+}
+
+nav .logo img {
+  height: 40px; /* Ajustez la hauteur selon vos besoins */
+  width: auto; /* La largeur sera calculée automatiquement pour préserver les proportions de l'image */
+  max-width: 300px; /* Garantit que l'image ne dépasse pas la taille du conteneur */
+  margin-right: 5px; /* Ajoute un espace entre le logo et le texte si nécessaire */
 }
 
 nav .search {
@@ -43,7 +50,9 @@ nav .search button {
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  font-weight: bold; /* Add this line to make the text bold */
 }
+
 
 nav .search button:hover {
   background-color: #47d41c;
@@ -642,8 +651,8 @@ footer {
 }
 
 .chatbot-icon {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
 }
 
@@ -775,7 +784,7 @@ nav {
 
 .sign-in, .sign-up {
   background-color: #16c936;
-  color: white;
+  color: #FFFFFF;
   border: none;
   padding: 10px 20px;
   text-align: center;
@@ -784,6 +793,7 @@ nav {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  font-weight: bold; /* Add this line to make the text bold */
 }
 
 .sign-in:hover, .sign-up:hover {

@@ -24,11 +24,13 @@
     margin-left:0 ;
   
     margin-bottom: 20px;
+
   }
 
   .signin-h2{
     margin-bottom: 25px;
     color: #88d351;
+    font-weight: bold; /* Add this line to make the text bold */
   }
   
   label {
@@ -53,6 +55,7 @@
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    font-weight: bold; /* Add this line to make the text bold */
   }
   
   button:disabled {

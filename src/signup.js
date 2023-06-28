@@ -18,7 +18,7 @@ const SignUp = () => {
     } else if (role === "patient") {
       window.location.href = "/patient-registration";
     } else if (role === "verifier") {
-      window.location.href = "/verifier-registration";
+      window.location.href = "/MyComponentV";
     } else if (role === "insurance") {
       window.location.href = "/insurance-registration";
     }

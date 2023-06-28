@@ -60,8 +60,8 @@ function DoctorSignup() {
 
 
 // Créer une instance de Web3 en se connectant à un nœud Ethereum local
-const web3 = new Web3(window.ethereum); 
-
+//const web3 = new Web3(window.ethereum); 
+const web3 = new Web3(window.ethereum);
 const adresse=contractData.address;
 const abi=contractData.abi;
 

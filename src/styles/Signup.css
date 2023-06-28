@@ -54,6 +54,7 @@
 .signup-title{
   margin-bottom: 25px;
   color: #4caf50;
+  font-weight: bold; /* Add this line to make the text bold */
 }
 
 .signup-container{
