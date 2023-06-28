@@ -7,7 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 1. Assurez-vous d'avoir Node.js et NPM installés sur votre machine.
 
 2. Clonez ce dépôt Git sur votre machine locale.
-  ``` git clone <lien_du_dépôt> ```
+  ``` git clone https://github.com/MaryemHadjWannes/PFE-.git ```
 
 
 3. Accédez au répertoire du projet.
